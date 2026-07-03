@@ -18,7 +18,7 @@ const Checkout = () => {
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.qty, 0);
 
  const bypassPayment = async () => {
-    const saveOrderRes = await fetch('/api/orders', {
+    const saveOrderRes = await fetch('https://grabnow.onrender.com/api/orders', {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',
