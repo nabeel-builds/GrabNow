@@ -1,6 +1,10 @@
 const app = require("./src/app")
 const connectDB = require("./src/config/db")
+const cors = require('cors')
 
+app.use(cors({
+    origin: 'https://grab-now-six.vercel.app/'
+}))
 
 connectDB()
 
