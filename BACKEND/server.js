@@ -3,7 +3,9 @@ const connectDB = require("./src/config/db")
 const cors = require('cors')
 
 app.use(cors({
-    origin: 'https://grab-now-iota.vercel.app/'
+    origin: 'https://grab-now-iota.vercel.app',
+    credentials:true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }))
 
 connectDB()
