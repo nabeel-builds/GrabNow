@@ -31,7 +31,7 @@ const EditProduct = () => {
     data.append('stock', formData.stock);
     if (image) data.append('image', image);
 
-    const res = await fetch(`/api/products/${id}`, {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/products/${id}`, {
       method: 'PUT',
       headers: { Authorization: `Bearer ${user.token}` },
       body: data
