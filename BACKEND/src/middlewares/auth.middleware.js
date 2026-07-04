@@ -10,17 +10,24 @@ const protect = async (req, res, next) => {
             token = req.headers.authorization.split(" ")[1]
             const decoded = jwt.verify(token, process.env.JWT_SECRET);
             req.user = await userModal.findById(decoded.id).select("-password")
-            next()
+
+            // If user is not present in DB then (re run the seed.js)
+            if (!req.user) {
+                return res.status(400).json({
+                    message: 'User no longer exists'
+                })
+            }
+            return next()
         } catch (err) {
 
-            res.status(401).json({
+            return res.status(401).json({
                 message: "Not authorized, token failed"
             })
 
         }
     }
     if (!token) {
-        res.status(401).json({
+        return res.status(401).json({
             message: "Not authorized, no token"
         })
     }
