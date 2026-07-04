@@ -19,10 +19,8 @@ const Login = () => {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })
-                console.log(first)
             })
             
-            console.log(res)
             const data = await res.json()
             if (res.ok) {
                 login(data)
