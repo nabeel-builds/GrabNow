@@ -67,7 +67,3 @@ The server codebase features a seamless fallback mechanic leveraging Node `proce
 7. Hit **Deploy**. The robust path resolving inside `/backend/server.js` hosts it fluidly!
 
 ---
-
-## 📄 Postman Documentations
-This repository includes a fully-scaffolded API testing toolkit: **`GrabNow_Postman_Collection.json`**. 
-Simply Import this file directly into the local Postman IDE. It features variables like `{{token}}` properly mapped to effortlessly check protected admin/user/order payloads. Happy coding!
